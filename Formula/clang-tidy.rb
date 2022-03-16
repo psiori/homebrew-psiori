@@ -1,8 +1,5 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class ClangTidy < Formula
-  desc "A clang-based C++ linter tool."
+  desc "Clang-based C++ linter tool"
   homepage "https://clang.llvm.org/docs/ClangFormat.html"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0"
@@ -61,7 +58,7 @@ class ClangTidy < Formula
   end
 
   test do
-    assert_equal "13.0.1",
-      shell_output("#{bin}/clang-tidy --version | head -n2 | tail -n1 | cut -d" " -f5")
+    assert_equal "13.0.1\n",
+      shell_output("#{bin}/clang-tidy --version | head -n2 | tail -n1 | cut -d' ' -f5")
   end
 end
