@@ -1,5 +1,5 @@
 class ClangTidy < Formula
-  desc "clang-based C++ linter tool"
+  desc "Clang-based C++ linter tool"
   homepage "https://clang.llvm.org/docs/ClangFormat.html"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0"
