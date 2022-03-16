@@ -21,6 +21,13 @@ class ClangTidy < Formula
     end
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/psiori/psiori"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, big_sur:      "b4c9d4b319fba634545eaff7b76afe8fb49773ef6c3e049cbcdfbd197546e003"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b53598eb1f7a36f8d444c1ef92d67b04f0bf57059b4cca7848791155192f9032"
+  end
+
   depends_on "cmake" => :build
 
   uses_from_macos "libxml2"
