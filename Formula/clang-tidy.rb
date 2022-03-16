@@ -1,6 +1,3 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class ClangTidy < Formula
   desc "A clang-based C++ linter tool"
   homepage "https://clang.llvm.org/docs/ClangFormat.html"
