@@ -58,7 +58,7 @@ class ClangTidy < Formula
   end
 
   test do
-    assert_equal "13.0.1",
+    assert_equal "13.0.1\n",
       shell_output("#{bin}/clang-tidy --version | head -n2 | tail -n1 | cut -d' ' -f5")
   end
 end
