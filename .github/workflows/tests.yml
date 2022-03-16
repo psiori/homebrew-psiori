@@ -6,15 +6,16 @@ on:
   pull_request:
 jobs:
   test-bot:
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-          - macos-latest
-          - - self-hosted
-            - macOS
-            - ARM64
-    runs-on: ${{ matrix.os }}
+    # strategy:
+    #   matrix:
+    #    include:
+    #       - os: ubuntu-latest
+    #       - os: macos-latest
+    #       -
+    runs-on:
+      - self-hosted
+      - macOS
+      - ARM64
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
