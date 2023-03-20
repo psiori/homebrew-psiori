@@ -41,7 +41,7 @@ class ClangFormatAT15 < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
-  uses_from_macos "python", since: :catalina
+  uses_from_macos "python" => [:build, :test], since: :catalina
   uses_from_macos "zlib"
 
   on_linux do
