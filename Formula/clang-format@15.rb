@@ -39,8 +39,8 @@ class ClangFormatAT15 < Formula
 
   depends_on "cmake" => [:build, :test]
 
-  uses_from_macos "libxml2"
   uses_from_macos "python" => [:build, :test], since: :catalina
+  uses_from_macos "libxml2"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
