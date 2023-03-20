@@ -23,15 +23,15 @@ class ClangFormatAT15 < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
     regex(%r{href=.*?/tag/llvmorg[._-]v?(\d+(?:\.\d+)+)}i)
+    strategy :github_latest
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
 
+  uses_from_macos "python" => [:build, :test], since: :catalina
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
-  uses_from_macos "python", since: :catalina
   uses_from_macos "zlib"
 
   on_linux do
