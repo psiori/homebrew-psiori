@@ -67,9 +67,9 @@ class ClangFormatAT15 < Formula
                     *std_cmake_args
     system "cmake", "--build", "build", "--target", "clang-format"
 
-    bin.install "build/bin/clang-format"
-    bin.install llvmpath/"tools/clang/tools/clang-format/git-clang-format"
-    (share/"clang").install llvmpath.glob("tools/clang/tools/clang-format/clang-format*")
+    bin.install "build/bin/clang-format" => "clang-format-15"
+    bin.install llvmpath/"tools/clang/tools/clang-format/git-clang-format" => "git-clang-format-15"
+    # (share/"clang").install llvmpath.glob("tools/clang/tools/clang-format/clang-format*")
   end
 
   test do
@@ -83,9 +83,9 @@ class ClangFormatAT15 < Formula
     system "git", "add", "test.c"
 
     assert_equal "int main(char *args) { printf(\"hello\"); }\n",
-        shell_output("#{bin}/clang-format -style=Google test.c")
+        shell_output("#{bin}/clang-format-15 -style=Google test.c")
 
     ENV.prepend_path "PATH", bin
-    assert_match "test.c", shell_output("git clang-format", 1)
+    assert_match "test.c", shell_output("git clang-format-15", 1)
   end
 end
