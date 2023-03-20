@@ -63,19 +63,20 @@ class ClangFormatAT15 < Formula
   end
 
   test do
-  #   system "git", "init"
-  #   system "git", "commit", "--allow-empty", "-m", "initial commit", "--quiet"
+    system "git", "init"
+    system "git", "commit", "--allow-empty", "-m", "initial commit", "--quiet"
 
-  #   # NB: below C code is messily formatted on purpose.
-  #   (testpath/"test.c").write <<~EOS
-  #     int         main(char *args) { \n   \t printf("hello"); }
-  #   EOS
-  #   system "git", "add", "test.c"
+    # NB: below C code is messily formatted on purpose.
+    (testpath/"test.c").write <<~EOS
+      int         main(char *args) { \n   \t printf("hello"); }
+    EOS
+    system "git", "add", "test.c"
 
-  #   assert_equal "int main(char *args) { printf(\"hello\"); }\n",
-  #       shell_output("#{bin}/clang-format -style=Google test.c")
+    assert_equal "int main(char *args) { printf(\"hello\"); }\n",
+        shell_output("#{bin}/clang-format-15 -style=Google test.c")
 
-  #   ENV.prepend_path "PATH", bin
-  #   assert_match "test.c", shell_output("git clang-format", 1)
+    # Fails with 'error: cannot find executable "clang-format"'.
+    # ENV.prepend_path "PATH", bin
+    # assert_match "test.c", shell_output("git clang-format-15", 1)
   end
 end
