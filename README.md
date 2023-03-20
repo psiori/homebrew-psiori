@@ -1,4 +1,4 @@
-# Psiori Psiori
+# psiori homebrew tap
 
 ## How do I install these formulae?
 
