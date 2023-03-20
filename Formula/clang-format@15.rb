@@ -37,7 +37,7 @@ class ClangFormatAT15 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0e6e2b1d5bc61e7da4c34ec6a4ca7c0caae691b53a175f095f72dc1efe6318c"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
